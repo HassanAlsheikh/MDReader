@@ -9,7 +9,7 @@ MDReader is a **read-only** viewer. No editing, no bloat. Just open a markdown f
 | Platform | Status |
 |----------|--------|
 | macOS 14+ | Available |
-| iOS 17+ | Available |
+| iOS 17+ | Planned |
 | Android | Planned |
 | Linux | Planned |
 | Windows | Planned |
