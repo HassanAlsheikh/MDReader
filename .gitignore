@@ -26,3 +26,6 @@ Package.resolved
 
 # Misc
 xcuserdata/
+
+# Homebrew tap (separate repo)
+homebrew-tap/
