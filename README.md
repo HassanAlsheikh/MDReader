@@ -32,7 +32,20 @@ MDReader is a **read-only** viewer. No editing, no bloat. Just open a markdown f
 | Cmd 0 | Reset font to default |
 | Cmd P | Print document (macOS) |
 
-## Building from Source
+## Installation
+
+### Homebrew (recommended)
+
+```bash
+brew tap HassanAlsheikh/tap
+brew install --cask mdreader
+```
+
+### Direct Download
+
+Download the latest `MDReader.dmg` from [GitHub Releases](https://github.com/HassanAlsheikh/MDReader/releases), open it, and drag MDReader into your Applications folder.
+
+### Building from Source
 
 Requires [XcodeGen](https://github.com/yonaskolb/XcodeGen) and Xcode 16+.
 
