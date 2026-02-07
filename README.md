@@ -23,6 +23,15 @@ MDReader is a **read-only** viewer. No editing, no bloat. Just open a markdown f
 - Adjustable text size
 - Native performance on each platform
 
+## Keyboard Shortcuts
+
+| Shortcut | Action |
+|----------|--------|
+| Cmd + | Increase font size |
+| Cmd - | Decrease font size |
+| Cmd 0 | Reset font to default |
+| Cmd P | Print document (macOS) |
+
 ## Building from Source
 
 Requires [XcodeGen](https://github.com/yonaskolb/XcodeGen) and Xcode 16+.
