@@ -45,6 +45,16 @@ brew install --cask mdreader
 
 Download the latest `MDReader.dmg` from [GitHub Releases](https://github.com/HassanAlsheikh/MDReader/releases), open it, and drag MDReader into your Applications folder.
 
+### macOS Gatekeeper Notice
+
+The app is not notarized with Apple, so macOS may show "Apple could not verify" on first launch. To fix this, run:
+
+```bash
+xattr -cr /Applications/MDReader.app
+```
+
+Or right-click the app, select **Open**, and click **Open** in the dialog.
+
 ### Building from Source
 
 Requires [XcodeGen](https://github.com/yonaskolb/XcodeGen) and Xcode 16+.
