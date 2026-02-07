@@ -9,7 +9,20 @@ final class DocumentViewModel: ObservableObject {
     }
 
     @Published var appearanceMode: AppearanceMode = .system
-    @Published var fontSize: CGFloat = 16
+    static let defaultFontSize: CGFloat = 16
+    @Published var fontSize: CGFloat = DocumentViewModel.defaultFontSize
+
+    func increaseFontSize() {
+        fontSize = min(fontSize + 2, 32)
+    }
+
+    func decreaseFontSize() {
+        fontSize = max(fontSize - 2, 10)
+    }
+
+    func resetFontSize() {
+        fontSize = Self.defaultFontSize
+    }
 
     var colorSchemeOverride: ColorScheme? {
         switch appearanceMode {
