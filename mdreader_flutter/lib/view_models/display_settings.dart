@@ -7,28 +7,23 @@ class DisplaySettings extends ChangeNotifier {
   static const double _maxFontSize = 32.0;
   static const double _fontSizeStep = 2.0;
 
-  double _fontSize = _defaultFontSize;
-  ThemeMode _themeMode = ThemeMode.system;
+  final SharedPreferences _prefs;
+
+  double _fontSize;
+  ThemeMode _themeMode;
 
   double get fontSize => _fontSize;
   ThemeMode get themeMode => _themeMode;
 
-  DisplaySettings() {
-    _load();
-  }
-
-  Future<void> _load() async {
-    final prefs = await SharedPreferences.getInstance();
-    _fontSize = prefs.getDouble('fontSize') ?? _defaultFontSize;
-    final themeModeIndex = prefs.getInt('themeMode') ?? ThemeMode.system.index;
-    _themeMode = ThemeMode.values[themeModeIndex];
-    notifyListeners();
-  }
+  DisplaySettings(SharedPreferences prefs)
+      : _prefs = prefs,
+        _fontSize = prefs.getDouble('fontSize') ?? _defaultFontSize,
+        _themeMode = ThemeMode.values[
+            prefs.getInt('themeMode') ?? ThemeMode.system.index];
 
   Future<void> _save() async {
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.setDouble('fontSize', _fontSize);
-    await prefs.setInt('themeMode', _themeMode.index);
+    await _prefs.setDouble('fontSize', _fontSize);
+    await _prefs.setInt('themeMode', _themeMode.index);
   }
 
   void zoomIn() {

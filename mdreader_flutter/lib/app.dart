@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'models/markdown_document.dart';
 import 'view_models/display_settings.dart';
 import 'views/home_view.dart';
@@ -12,14 +13,16 @@ import 'platform/window_config.dart';
 import 'theme/app_theme.dart';
 
 class MDReaderApp extends StatefulWidget {
-  const MDReaderApp({super.key});
+  final SharedPreferences prefs;
+
+  const MDReaderApp({super.key, required this.prefs});
 
   @override
   State<MDReaderApp> createState() => _MDReaderAppState();
 }
 
 class _MDReaderAppState extends State<MDReaderApp> {
-  final _settings = DisplaySettings();
+  late final _settings = DisplaySettings(widget.prefs);
   MarkdownDocument? _document;
 
   static const _openFileChannel = MethodChannel('com.hassanalsheikh.mdreader/open_file');
