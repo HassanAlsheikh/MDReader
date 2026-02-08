@@ -88,7 +88,7 @@ class DesktopMenuBar extends StatelessWidget {
     showAboutDialog(
       context: context,
       applicationName: 'MDReader',
-      applicationVersion: '2.0.0',
+      applicationVersion: '2.0.1',
       applicationIcon: const Icon(Icons.description_outlined, size: 48),
       children: [
         const SizedBox(height: 8),
