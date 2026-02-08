@@ -9,39 +9,43 @@ MDReader is a **read-only** viewer. No editing, no bloat. Just open a markdown f
 | Platform | Status |
 |----------|--------|
 | macOS 14+ | Available |
-| iOS 17+ | Planned |
-| Android | Planned |
-| Linux | Planned |
-| Windows | Planned |
+| iOS | Available (build from source) |
+| Android | Available (build from source) |
+| Linux | Available (build from source) |
+| Windows | Available (build from source) |
 | AppGallery (Huawei/Honor) | Planned |
 
 ## Features
 
-- Open `.md` files from the system file picker
+- Open `.md` files from the system file picker or by double-clicking
 - Rich markdown rendering (headings, lists, code blocks, links, images, tables, etc.)
 - Light / Dark / System appearance modes
-- Adjustable text size
+- Adjustable text size with persistence
+- Print support
+- Native macOS menu bar with File, View, and About
+- Cross-platform keyboard shortcuts
 - Native performance on each platform
 
 ## Keyboard Shortcuts
 
-| Shortcut | Action |
-|----------|--------|
-| Cmd + | Increase font size |
-| Cmd - | Decrease font size |
-| Cmd 0 | Reset font to default |
-| Cmd P | Print document (macOS) |
+| Action | macOS | Linux / Windows |
+|--------|-------|-----------------|
+| Open file | Cmd O | Ctrl O |
+| Increase font size | Cmd + | Ctrl + |
+| Decrease font size | Cmd - | Ctrl - |
+| Reset font to default | Cmd 0 | Ctrl 0 |
+| Print document | Cmd P | Ctrl P |
 
 ## Installation
 
-### Homebrew (recommended)
+### Homebrew (macOS — recommended)
 
 ```bash
 brew tap HassanAlsheikh/tap
 brew install --cask mdreader
 ```
 
-### Direct Download
+### Direct Download (macOS)
 
 Download the latest `MDReader.dmg` from [GitHub Releases](https://github.com/HassanAlsheikh/MDReader/releases), open it, and drag MDReader into your Applications folder.
 
@@ -57,36 +61,51 @@ Or right-click the app, select **Open**, and click **Open** in the dialog.
 
 ### Building from Source
 
-Requires [XcodeGen](https://github.com/yonaskolb/XcodeGen) and Xcode 16+.
+Requires [Flutter](https://flutter.dev/docs/get-started/install) 3.x+.
 
 ```bash
-# Generate the Xcode project
-xcodegen generate
+cd mdreader_flutter
 
-# Build for macOS
-xcodebuild -scheme MDReader_macOS -project MDReader.xcodeproj -destination 'platform=macOS' build
+# macOS
+flutter build macos
 
-# Build for iOS Simulator
-xcodebuild -scheme MDReader_iOS -project MDReader.xcodeproj -destination 'platform=iOS Simulator,name=iPhone 16' build
+# iOS
+flutter build ios --no-codesign
+
+# Android
+flutter build apk
+
+# Linux
+flutter build linux
+
+# Windows
+flutter build windows
 ```
 
 ## Project Structure
 
 ```
-MDReader/
-├── project.yml              # XcodeGen project spec
-├── MDReader/
-│   ├── App/                 # App entry point (DocumentGroup)
-│   ├── Models/              # FileDocument conformance for .md files
-│   ├── Views/               # Document view, theme picker
-│   ├── ViewModels/          # Display preferences (theme, font size)
-│   ├── Theme/               # Custom MarkdownUI theme
-│   └── Resources/           # Asset catalog
+mdreader_flutter/
+├── lib/
+│   ├── main.dart                  # Entry point with window init
+│   ├── app.dart                   # MaterialApp with theme switching
+│   ├── models/                    # MarkdownDocument data class
+│   ├── services/                  # File picker, print service
+│   ├── view_models/               # DisplaySettings (ChangeNotifier)
+│   ├── views/                     # Home view, document view
+│   ├── widgets/                   # Markdown renderer, theme picker
+│   ├── theme/                     # App theme, markdown theme
+│   └── platform/                  # Desktop menu, keyboard shortcuts, window config
 ```
 
 ## Dependencies
 
-- [MarkdownUI](https://github.com/gonzalezreal/swift-markdown-ui) — SwiftUI markdown rendering
+- [markdown_widget](https://pub.dev/packages/markdown_widget) — Markdown rendering with syntax highlighting
+- [file_picker](https://pub.dev/packages/file_picker) — Cross-platform file open dialog
+- [window_manager](https://pub.dev/packages/window_manager) — Desktop window management
+- [printing](https://pub.dev/packages/printing) — Print support
+- [shared_preferences](https://pub.dev/packages/shared_preferences) — Persist display settings
+- [url_launcher](https://pub.dev/packages/url_launcher) — Open links in browser
 
 ## License
 
