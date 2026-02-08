@@ -16,6 +16,8 @@ class AppDelegate: FlutterAppDelegate {
   }
 
   override func applicationDidFinishLaunching(_ notification: Notification) {
+    super.applicationDidFinishLaunching(notification)
+
     if let window = NSApplication.shared.windows.first,
        let flutterViewController = window.contentViewController as? FlutterViewController {
       openFileChannel = FlutterMethodChannel(
@@ -37,6 +39,31 @@ class AppDelegate: FlutterAppDelegate {
     }
   }
 
+  // Modern macOS (and recent FlutterAppDelegate) delivers file-open events as URLs
+  // via this method instead of the legacy openFile:/openFiles: methods. Without this
+  // override, file:// URLs from Finder go to FlutterAppDelegate's default handler
+  // (deep linking) and never reach our pending-file mechanism.
+  override func application(_ application: NSApplication, open urls: [URL]) {
+    for url in urls {
+      if url.isFileURL {
+        let path = url.path
+        if channelReady, let channel = openFileChannel {
+          channel.invokeMethod("openFile", arguments: path)
+        } else {
+          pendingFilePath = path
+        }
+        break  // Only open the first file
+      }
+    }
+
+    // Forward non-file URLs to super for deep linking
+    let nonFileUrls = urls.filter { !$0.isFileURL }
+    if !nonFileUrls.isEmpty {
+      super.application(application, open: nonFileUrls)
+    }
+  }
+
+  // Legacy methods kept as fallback for older macOS versions
   override func application(_ sender: NSApplication, openFile filename: String) -> Bool {
     if channelReady, let channel = openFileChannel {
       channel.invokeMethod("openFile", arguments: filename)
