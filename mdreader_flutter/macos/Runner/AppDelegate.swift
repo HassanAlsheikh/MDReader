@@ -5,6 +5,7 @@ import FlutterMacOS
 class AppDelegate: FlutterAppDelegate {
   private var openFileChannel: FlutterMethodChannel?
   private var pendingFilePath: String?
+  private var channelReady = false
 
   override func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
     return true
@@ -22,19 +23,24 @@ class AppDelegate: FlutterAppDelegate {
         binaryMessenger: flutterViewController.engine.binaryMessenger
       )
 
-      // If a file was opened before the channel was ready, send it now
-      if let path = pendingFilePath {
-        openFileChannel?.invokeMethod("openFile", arguments: path)
-        pendingFilePath = nil
+      // Dart calls this to check for a file queued before Flutter was ready
+      openFileChannel?.setMethodCallHandler { [weak self] (call, result) in
+        if call.method == "getPendingFile" {
+          self?.channelReady = true
+          let path = self?.pendingFilePath
+          self?.pendingFilePath = nil
+          result(path)
+        } else {
+          result(FlutterMethodNotImplemented)
+        }
       }
     }
   }
 
   override func application(_ sender: NSApplication, openFile filename: String) -> Bool {
-    if let channel = openFileChannel {
+    if channelReady, let channel = openFileChannel {
       channel.invokeMethod("openFile", arguments: filename)
     } else {
-      // App not fully launched yet — queue the path
       pendingFilePath = filename
     }
     return true
@@ -42,7 +48,7 @@ class AppDelegate: FlutterAppDelegate {
 
   override func application(_ sender: NSApplication, openFiles filenames: [String]) {
     if let first = filenames.first {
-      if let channel = openFileChannel {
+      if channelReady, let channel = openFileChannel {
         channel.invokeMethod("openFile", arguments: first)
       } else {
         pendingFilePath = first

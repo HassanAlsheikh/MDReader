@@ -27,13 +27,27 @@ class _MDReaderAppState extends State<MDReaderApp> {
   @override
   void initState() {
     super.initState();
+    // Handle warm-start file opens (app already running)
     _openFileChannel.setMethodCallHandler(_handleMethodCall);
+    // Handle cold-start file opens (app launched by opening a file)
+    _checkPendingFile();
   }
 
   Future<dynamic> _handleMethodCall(MethodCall call) async {
     if (call.method == 'openFile') {
       final path = call.arguments as String;
       await _openFileFromPath(path);
+    }
+  }
+
+  Future<void> _checkPendingFile() async {
+    try {
+      final path = await _openFileChannel.invokeMethod<String>('getPendingFile');
+      if (path != null) {
+        await _openFileFromPath(path);
+      }
+    } catch (_) {
+      // Channel not available on non-macOS platforms
     }
   }
 
