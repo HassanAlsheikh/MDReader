@@ -1,7 +1,7 @@
 name: mdreader
 description: "A cross-platform read-only markdown viewer."
 publish_to: 'none'
-version: 2.0.1+2
+version: 2.0.2+3
 
 environment:
   sdk: ^3.10.0

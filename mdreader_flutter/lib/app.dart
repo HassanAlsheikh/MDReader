@@ -1,9 +1,11 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'models/markdown_document.dart';
 import 'view_models/display_settings.dart';
 import 'views/home_view.dart';
 import 'views/document_view.dart';
+import 'services/file_service.dart';
 import 'platform/desktop_menu.dart';
 import 'platform/keyboard_shortcuts.dart';
 import 'platform/window_config.dart';
@@ -19,6 +21,30 @@ class MDReaderApp extends StatefulWidget {
 class _MDReaderAppState extends State<MDReaderApp> {
   final _settings = DisplaySettings();
   MarkdownDocument? _document;
+
+  static const _openFileChannel = MethodChannel('com.hassanalsheikh.mdreader/open_file');
+
+  @override
+  void initState() {
+    super.initState();
+    _openFileChannel.setMethodCallHandler(_handleMethodCall);
+  }
+
+  Future<dynamic> _handleMethodCall(MethodCall call) async {
+    if (call.method == 'openFile') {
+      final path = call.arguments as String;
+      await _openFileFromPath(path);
+    }
+  }
+
+  Future<void> _openFileFromPath(String path) async {
+    try {
+      final document = await FileService.readFile(path);
+      _openDocument(document);
+    } catch (e) {
+      debugPrint('Failed to open file: $e');
+    }
+  }
 
   void _openDocument(MarkdownDocument document) {
     setState(() => _document = document);
