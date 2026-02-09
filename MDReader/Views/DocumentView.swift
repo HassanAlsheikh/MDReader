@@ -11,6 +11,8 @@ struct DocumentView: View {
                 .markdownTheme(viewModel.currentTheme)
                 .textSelection(.enabled)
                 .padding()
+                .environment(\.layoutDirection, document.text.isRTL ? .rightToLeft : .leftToRight)
+                .multilineTextAlignment(document.text.isRTL ? .trailing : .leading)
         }
         .frame(minWidth: 300, minHeight: 400)
         .toolbar {
@@ -34,6 +36,19 @@ struct DocumentView: View {
         printOperation.runModal(for: NSApp.keyWindow ?? NSWindow(), delegate: nil, didRun: nil, contextInfo: nil)
     }
     #endif
+}
+
+private extension String {
+    var isRTL: Bool {
+        guard let firstLine = components(separatedBy: .newlines).first(where: { !$0.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty }) else {
+            return false
+        }
+        let stripped = firstLine.replacingOccurrences(of: "#", with: "").trimmingCharacters(in: .whitespacesAndNewlines)
+        guard let first = stripped.unicodeScalars.first(where: { CharacterSet.letters.contains($0) }) else {
+            return false
+        }
+        return CharacterSet(charactersIn: "\u{0590}"..."\u{08FF}").contains(first)
+    }
 }
 
 private struct KeyboardShortcutsModifier: ViewModifier {
