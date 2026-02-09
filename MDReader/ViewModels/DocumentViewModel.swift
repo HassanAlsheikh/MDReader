@@ -8,9 +8,25 @@ final class DocumentViewModel: ObservableObject {
         case dark = "Dark"
     }
 
-    @Published var appearanceMode: AppearanceMode = .system
     static let defaultFontSize: CGFloat = 16
-    @Published var fontSize: CGFloat = DocumentViewModel.defaultFontSize
+
+    @Published var appearanceMode: AppearanceMode = .system {
+        didSet { UserDefaults.standard.set(appearanceMode.rawValue, forKey: "appearanceMode") }
+    }
+    @Published var fontSize: CGFloat = DocumentViewModel.defaultFontSize {
+        didSet { UserDefaults.standard.set(fontSize, forKey: "fontSize") }
+    }
+
+    init() {
+        let savedSize = UserDefaults.standard.double(forKey: "fontSize")
+        if savedSize > 0 {
+            self.fontSize = savedSize
+        }
+        if let raw = UserDefaults.standard.string(forKey: "appearanceMode"),
+           let mode = AppearanceMode(rawValue: raw) {
+            self.appearanceMode = mode
+        }
+    }
 
     func increaseFontSize() {
         fontSize = min(fontSize + 2, 32)

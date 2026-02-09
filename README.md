@@ -1,51 +1,38 @@
 # MDReader
 
-A fast, lightweight markdown file viewer. Open and read `.md` files with rich formatting — nothing more, nothing less.
+A fast, lightweight markdown file viewer for macOS. Open and read `.md` files with rich formatting — nothing more, nothing less.
 
 MDReader is a **read-only** viewer. No editing, no bloat. Just open a markdown file and read it.
 
-## Supported Platforms
-
-| Platform | Status |
-|----------|--------|
-| macOS 14+ | Available |
-| iOS | Available (build from source) |
-| Android | Available (build from source) |
-| Linux | Available (build from source) |
-| Windows | Available (build from source) |
-| AppGallery (Huawei/Honor) | Planned |
-
 ## Features
 
-- Open `.md` files from the system file picker or by double-clicking
+- Open `.md` files from Finder or the system file picker
 - Rich markdown rendering (headings, lists, code blocks, links, images, tables, etc.)
-- Light / Dark / System appearance modes
+- Light / Dark / System appearance modes with persistence
 - Adjustable text size with persistence
 - Print support
-- Native macOS menu bar with File, View, and About
-- Cross-platform keyboard shortcuts
-- Native performance on each platform
+- Native macOS menu bar
 
 ## Keyboard Shortcuts
 
-| Action | macOS | Linux / Windows |
-|--------|-------|-----------------|
-| Open file | Cmd O | Ctrl O |
-| Increase font size | Cmd + | Ctrl + |
-| Decrease font size | Cmd - | Ctrl - |
-| Reset font to default | Cmd 0 | Ctrl 0 |
-| Print document | Cmd P | Ctrl P |
+| Action | Shortcut |
+|--------|----------|
+| Open file | Cmd O |
+| Increase font size | Cmd + |
+| Decrease font size | Cmd - |
+| Reset font to default | Cmd 0 |
+| Print document | Cmd P |
 
 ## Installation
 
-### Homebrew (macOS — recommended)
+### Homebrew (recommended)
 
 ```bash
 brew tap HassanAlsheikh/tap
 brew install --cask mdreader
 ```
 
-### Direct Download (macOS)
+### Direct Download
 
 Download the latest `MDReader.dmg` from [GitHub Releases](https://github.com/HassanAlsheikh/MDReader/releases), open it, and drag MDReader into your Applications folder.
 
@@ -61,51 +48,41 @@ Or right-click the app, select **Open**, and click **Open** in the dialog.
 
 ### Building from Source
 
-Requires [Flutter](https://flutter.dev/docs/get-started/install) 3.x+.
+Requires [XcodeGen](https://github.com/yonaskolb/XcodeGen) and Xcode 16+.
 
 ```bash
-cd mdreader_flutter
-
-# macOS
-flutter build macos
-
-# iOS
-flutter build ios --no-codesign
-
-# Android
-flutter build apk
-
-# Linux
-flutter build linux
-
-# Windows
-flutter build windows
+xcodegen generate
+open MDReader.xcodeproj
 ```
+
+Build and run from Xcode (Cmd R), or build a release archive via Product > Archive.
 
 ## Project Structure
 
 ```
-mdreader_flutter/
-├── lib/
-│   ├── main.dart                  # Entry point with window init
-│   ├── app.dart                   # MaterialApp with theme switching
-│   ├── models/                    # MarkdownDocument data class
-│   ├── services/                  # File picker, print service
-│   ├── view_models/               # DisplaySettings (ChangeNotifier)
-│   ├── views/                     # Home view, document view
-│   ├── widgets/                   # Markdown renderer, theme picker
-│   ├── theme/                     # App theme, markdown theme
-│   └── platform/                  # Desktop menu, keyboard shortcuts, window config
+MDReader/
+├── App/
+│   └── MDReaderApp.swift              # Entry point, DocumentGroup, About menu
+├── Models/
+│   └── MarkdownDocument.swift         # FileDocument model (UTType, read/write)
+├── ViewModels/
+│   └── DocumentViewModel.swift        # State: appearance, font size, persistence
+├── Views/
+│   ├── DocumentView.swift             # Scrollable markdown rendering + shortcuts
+│   └── ThemePickerView.swift          # Appearance & font size menu
+├── Theme/
+│   └── MarkdownTheme+Custom.swift     # MarkdownUI GitHub theme extension
+└── Resources/
+    └── Assets.xcassets/               # App icon, accent color
 ```
 
 ## Dependencies
 
-- [markdown_widget](https://pub.dev/packages/markdown_widget) — Markdown rendering with syntax highlighting
-- [file_picker](https://pub.dev/packages/file_picker) — Cross-platform file open dialog
-- [window_manager](https://pub.dev/packages/window_manager) — Desktop window management
-- [printing](https://pub.dev/packages/printing) — Print support
-- [shared_preferences](https://pub.dev/packages/shared_preferences) — Persist display settings
-- [url_launcher](https://pub.dev/packages/url_launcher) — Open links in browser
+- [MarkdownUI](https://github.com/gonzalezreal/swift-markdown-ui) — Markdown rendering with GitHub-style theme
+
+## Requirements
+
+- macOS 14.0+
 
 ## License
 

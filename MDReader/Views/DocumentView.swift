@@ -20,12 +20,9 @@ struct DocumentView: View {
         }
         .preferredColorScheme(viewModel.colorSchemeOverride)
         .keyboardShortcut(commands: viewModel)
-        #if os(macOS)
         .keyboardShortcut("p", modifiers: .command) { printDocument() }
-        #endif
     }
 
-    #if os(macOS)
     private func printDocument() {
         let printView = NSTextView(frame: NSRect(x: 0, y: 0, width: 612, height: 792))
         printView.string = document.text
@@ -33,7 +30,6 @@ struct DocumentView: View {
         let printOperation = NSPrintOperation(view: printView)
         printOperation.runModal(for: NSApp.keyWindow ?? NSWindow(), delegate: nil, didRun: nil, contextInfo: nil)
     }
-    #endif
 }
 
 private struct KeyboardShortcutsModifier: ViewModifier {
