@@ -7,28 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		04AC8E3B23D9B763A16530CD /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 7E0C4F8A9B44CA98A7B9C5D6 /* MarkdownUI */; };
-		0A931C4019E71B6D296B7539 /* MarkdownTheme+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F30A64A472E2097A6388E4 /* MarkdownTheme+Custom.swift */; };
-		140FAB664D631D49D9ED8499 /* DocumentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D8256BE0FB818B58637D0D /* DocumentViewModel.swift */; };
-		146945CD1EC3D8F8CBC12454 /* MDReaderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEB386A9B5C2DF25171FDF7 /* MDReaderApp.swift */; };
-		23D72B2BCEC047E399C55203 /* MarkdownDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC2A2E394C7BCC45CEBD064 /* MarkdownDocument.swift */; };
-		2933E4701DAB010AB57AF5DD /* MarkdownTheme+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F30A64A472E2097A6388E4 /* MarkdownTheme+Custom.swift */; };
-		4927C2B861190BA8238EECFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8016BCA31AF3456D8C6E2DFD /* Assets.xcassets */; };
-		4B66B411ABC9ECED6C9E9D2D /* ThemePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103F95D27F9B81EF1A33C780 /* ThemePickerView.swift */; };
-		516BA167243B78E296E854C1 /* MDReaderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEB386A9B5C2DF25171FDF7 /* MDReaderApp.swift */; };
-		594B9FBB9785D8444C5B2EA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8016BCA31AF3456D8C6E2DFD /* Assets.xcassets */; };
-		5E0C4460B5C870001F3020F9 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 223B86E198E43D73406D8AB2 /* MarkdownUI */; };
-		727A4C87F6CECB86D89B6A17 /* DocumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A0A2F286861321FBB6EACB /* DocumentView.swift */; };
-		B9FB54E7079BD306EF11E51F /* MarkdownDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC2A2E394C7BCC45CEBD064 /* MarkdownDocument.swift */; };
-		BB4DDC17FBE96D4CE50EB9EF /* ThemePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103F95D27F9B81EF1A33C780 /* ThemePickerView.swift */; };
-		C7752F36B58BC7677CC4C6CD /* DocumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A0A2F286861321FBB6EACB /* DocumentView.swift */; };
-		FC47580AE04494C77BCF31A1 /* DocumentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D8256BE0FB818B58637D0D /* DocumentViewModel.swift */; };
+		082DA7D8B6810F3ECF11EAD2 /* MDReaderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEB386A9B5C2DF25171FDF7 /* MDReaderApp.swift */; };
+		33A39D1BA6094BCA69E59DD1 /* ThemePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103F95D27F9B81EF1A33C780 /* ThemePickerView.swift */; };
+		4044BBBB23702633A6F4840E /* MarkdownDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC2A2E394C7BCC45CEBD064 /* MarkdownDocument.swift */; };
+		686960CF2C6A55EAC6A236D5 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = C5C7F6D56AD0E60FB6832E00 /* MarkdownUI */; };
+		6E9EC9DA7975245D3EA42D64 /* DocumentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D8256BE0FB818B58637D0D /* DocumentViewModel.swift */; };
+		8BBF1D2F2411631A3FAFB905 /* DocumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A0A2F286861321FBB6EACB /* DocumentView.swift */; };
+		E2AAB26F3E733DD2B9EF8BBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8016BCA31AF3456D8C6E2DFD /* Assets.xcassets */; };
+		FBF5E04AC0163E3880165421 /* MarkdownTheme+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F30A64A472E2097A6388E4 /* MarkdownTheme+Custom.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		103F95D27F9B81EF1A33C780 /* ThemePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemePickerView.swift; sourceTree = "<group>"; };
-		29B1B13AE334879A77E52570 /* MDReader.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = MDReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		2FC79408445D8B1292B23A34 /* MDReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MDReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		53DED5154D56B7C28050E568 /* MDReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MDReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8016BCA31AF3456D8C6E2DFD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		90A0A2F286861321FBB6EACB /* DocumentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentView.swift; sourceTree = "<group>"; };
 		C0F30A64A472E2097A6388E4 /* MarkdownTheme+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MarkdownTheme+Custom.swift"; sourceTree = "<group>"; };
@@ -39,19 +30,11 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		E0973BF0F88B478C159C3A8C /* Frameworks */ = {
+		78E616158900013F00D211B9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04AC8E3B23D9B763A16530CD /* MarkdownUI in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E1BD9F8D830ED278ED7CFD52 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5E0C4460B5C870001F3020F9 /* MarkdownUI in Frameworks */,
+				686960CF2C6A55EAC6A236D5 /* MarkdownUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,8 +52,7 @@
 		712726D41F10E7970879CFFD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				29B1B13AE334879A77E52570 /* MDReader.app */,
-				2FC79408445D8B1292B23A34 /* MDReader.app */,
+				53DED5154D56B7C28050E568 /* MDReader.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -141,44 +123,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B57FE618F61A45D31A7723DC /* MDReader_iOS */ = {
+		63E7C78D8DCA6EAF62D87CF6 /* MDReader */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A8CD7F27D5285F13E6CB9E4E /* Build configuration list for PBXNativeTarget "MDReader_iOS" */;
+			buildConfigurationList = E840C51A152FDA84291957F3 /* Build configuration list for PBXNativeTarget "MDReader" */;
 			buildPhases = (
-				14D9326A16F881EA3229C199 /* Sources */,
-				DB636FBC74EC5BF4304C0D16 /* Resources */,
-				E1BD9F8D830ED278ED7CFD52 /* Frameworks */,
+				047964FB428C0CB56914C72C /* Sources */,
+				99C7912BE2BE3079AB963CE9 /* Resources */,
+				78E616158900013F00D211B9 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = MDReader_iOS;
+			name = MDReader;
 			packageProductDependencies = (
-				223B86E198E43D73406D8AB2 /* MarkdownUI */,
+				C5C7F6D56AD0E60FB6832E00 /* MarkdownUI */,
 			);
-			productName = MDReader_iOS;
-			productReference = 29B1B13AE334879A77E52570 /* MDReader.app */;
-			productType = "com.apple.product-type.application";
-		};
-		D4DB01368C365B92979D1F9B /* MDReader_macOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 19CBF194C69AA379BF57FF58 /* Build configuration list for PBXNativeTarget "MDReader_macOS" */;
-			buildPhases = (
-				3520790F89DF8ED17A4AB9DF /* Sources */,
-				ABA0FF1BCADECEE64B074421 /* Resources */,
-				E0973BF0F88B478C159C3A8C /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = MDReader_macOS;
-			packageProductDependencies = (
-				7E0C4F8A9B44CA98A7B9C5D6 /* MarkdownUI */,
-			);
-			productName = MDReader_macOS;
-			productReference = 2FC79408445D8B1292B23A34 /* MDReader.app */;
+			productName = MDReader;
+			productReference = 53DED5154D56B7C28050E568 /* MDReader.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -207,55 +169,33 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B57FE618F61A45D31A7723DC /* MDReader_iOS */,
-				D4DB01368C365B92979D1F9B /* MDReader_macOS */,
+				63E7C78D8DCA6EAF62D87CF6 /* MDReader */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		ABA0FF1BCADECEE64B074421 /* Resources */ = {
+		99C7912BE2BE3079AB963CE9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				594B9FBB9785D8444C5B2EA2 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DB636FBC74EC5BF4304C0D16 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4927C2B861190BA8238EECFC /* Assets.xcassets in Resources */,
+				E2AAB26F3E733DD2B9EF8BBA /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		14D9326A16F881EA3229C199 /* Sources */ = {
+		047964FB428C0CB56914C72C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C7752F36B58BC7677CC4C6CD /* DocumentView.swift in Sources */,
-				FC47580AE04494C77BCF31A1 /* DocumentViewModel.swift in Sources */,
-				516BA167243B78E296E854C1 /* MDReaderApp.swift in Sources */,
-				B9FB54E7079BD306EF11E51F /* MarkdownDocument.swift in Sources */,
-				2933E4701DAB010AB57AF5DD /* MarkdownTheme+Custom.swift in Sources */,
-				4B66B411ABC9ECED6C9E9D2D /* ThemePickerView.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3520790F89DF8ED17A4AB9DF /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				727A4C87F6CECB86D89B6A17 /* DocumentView.swift in Sources */,
-				140FAB664D631D49D9ED8499 /* DocumentViewModel.swift in Sources */,
-				146945CD1EC3D8F8CBC12454 /* MDReaderApp.swift in Sources */,
-				23D72B2BCEC047E399C55203 /* MarkdownDocument.swift in Sources */,
-				0A931C4019E71B6D296B7539 /* MarkdownTheme+Custom.swift in Sources */,
-				BB4DDC17FBE96D4CE50EB9EF /* ThemePickerView.swift in Sources */,
+				8BBF1D2F2411631A3FAFB905 /* DocumentView.swift in Sources */,
+				6E9EC9DA7975245D3EA42D64 /* DocumentViewModel.swift in Sources */,
+				082DA7D8B6810F3ECF11EAD2 /* MDReaderApp.swift in Sources */,
+				4044BBBB23702633A6F4840E /* MarkdownDocument.swift in Sources */,
+				FBF5E04AC0163E3880165421 /* MarkdownTheme+Custom.swift in Sources */,
+				33A39D1BA6094BCA69E59DD1 /* ThemePickerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,17 +253,39 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
+		};
+		1843F0856ADA9B82446E16DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				INFOPLIST_FILE = MDReader/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MDReader;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 3.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hassanalsheikh.MDReader;
+				PRODUCT_NAME = MDReader;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.9;
+			};
+			name = Release;
 		};
 		1D609AEBC5D2A40B286E3490 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -370,18 +332,18 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
-		3D61E02BBE42AA45004B193B /* Debug */ = {
+		A87B861879493E08C4D36D98 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -394,7 +356,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 3.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hassanalsheikh.MDReader;
 				PRODUCT_NAME = MDReader;
 				SDKROOT = macosx;
@@ -402,74 +364,6 @@
 				SWIFT_VERSION = 5.9;
 			};
 			name = Debug;
-		};
-		7926CF1521FD4CC6A6FB6AC7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				INFOPLIST_FILE = MDReader/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = MDReader;
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.hassanalsheikh.MDReader;
-				PRODUCT_NAME = MDReader;
-				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 5.9;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		9B0F88653E3B0604209FE72A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				INFOPLIST_FILE = MDReader/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = MDReader;
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.hassanalsheikh.MDReader;
-				PRODUCT_NAME = MDReader;
-				SDKROOT = iphoneos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_VERSION = 5.9;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		E46E82E651349E326592A3F6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				INFOPLIST_FILE = MDReader/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = MDReader;
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.hassanalsheikh.MDReader;
-				PRODUCT_NAME = MDReader;
-				SDKROOT = macosx;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 5.9;
-			};
-			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
@@ -483,20 +377,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		19CBF194C69AA379BF57FF58 /* Build configuration list for PBXNativeTarget "MDReader_macOS" */ = {
+		E840C51A152FDA84291957F3 /* Build configuration list for PBXNativeTarget "MDReader" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3D61E02BBE42AA45004B193B /* Debug */,
-				E46E82E651349E326592A3F6 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
-		};
-		A8CD7F27D5285F13E6CB9E4E /* Build configuration list for PBXNativeTarget "MDReader_iOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				9B0F88653E3B0604209FE72A /* Debug */,
-				7926CF1521FD4CC6A6FB6AC7 /* Release */,
+				A87B861879493E08C4D36D98 /* Debug */,
+				1843F0856ADA9B82446E16DC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
@@ -515,12 +400,7 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		223B86E198E43D73406D8AB2 /* MarkdownUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 163ECB3330316A7A27BE08B9 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */;
-			productName = MarkdownUI;
-		};
-		7E0C4F8A9B44CA98A7B9C5D6 /* MarkdownUI */ = {
+		C5C7F6D56AD0E60FB6832E00 /* MarkdownUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 163ECB3330316A7A27BE08B9 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */;
 			productName = MarkdownUI;
